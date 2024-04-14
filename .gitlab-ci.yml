@@ -1,24 +1,31 @@
 image: node:latest
 
 stages:
-    - build
-    - test
-    - deploy
+  - build
+  - test
+  - deploy
 
-build-job:
-    stage: build
-    script:
-        - echo "Build do código HTML"
-        - npm install
-        - npm run build
+variables:
+  CI_PROJECT_DIR: "$CI_PROJECT_DIR"
+
+build:
+  stage: build
+  script:
+    - echo "Iniciando o estágio de build"
+    - cd $CI_PROJECT_DIR
+    - npm install
+    - npm run build
 
 test:
-    stage: test
-    script:
-        - echo "Iniciando estágios de testes"
-        - npm test
+  stage: test
+  script:
+    - echo "Iniciando o estágio de testes"
+    - cd $CI_PROJECT_DIR
+    - npm test
 
 deploy:
-    stage: deploy
-    script:
-        - echo "Implantando o projeto"
+  stage: deploy
+  script:
+    - echo "Iniciando o estágio de deploy"
+    - cd $CI_PROJECT_DIR
+
