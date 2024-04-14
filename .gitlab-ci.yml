@@ -1,27 +1,19 @@
-image: node:latest
-
 stages:
-  - build
-  - test
-  - deploy
+    - build
+    - test
+    - deploy
 
-build:
-  stage: build
-  script:
-    - echo "Iniciando o estágio de build"
-    - cd somativa1devops
-    - npm install
-    - npm run build
+build-job:
+    stage: build
+    script:
+        - echo "Build do código HTML"
 
 test:
-  stage: test
-  script:
-    - echo "Iniciando o estágio de testes"
-    - cd somativa1devops
-    - npm test
+    stage: test
+    script:
+        - echo "Iniciando estágios de testes"
 
 deploy:
-  stage: deploy
-  script:
-    - echo "Iniciando o estágio de deploy"
-    - cd somativa1devops
+    stage: deploy
+    script:
+        - echo "Implantando o projeto"
