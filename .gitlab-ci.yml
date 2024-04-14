@@ -1,0 +1,19 @@
+stages:
+    - build
+    - test
+    - deploy
+
+build-job:
+    stage: build
+    script:
+        - echo "Build do código HTML"
+
+test:
+    stage: test
+    script:
+        - echo "Iniciando estágios de testes"
+
+deploy:
+    stage: deploy
+    script:
+        - echo "Implantando o projeto"
