@@ -7,11 +7,14 @@ build-job:
     stage: build
     script:
         - echo "Build do código HTML"
+        - npm install
+        - npm run build
 
 test:
     stage: test
     script:
         - echo "Iniciando estágios de testes"
+        - npm test
 
 deploy:
     stage: deploy
