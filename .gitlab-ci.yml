@@ -1,3 +1,5 @@
+image: python
+
 stages:
     - build
     - test
@@ -6,14 +8,14 @@ stages:
 build-job:
     stage: build
     script:
-        - echo "Build do código HTML"
+        - python3 -V
 
-test:
+test-count:
     stage: test
     script:
-        - echo "Iniciando estágios de testes"
+        - python3 hello.py
 
-deploy:
+deploy-job:
     stage: deploy
     script:
-        - echo "Implantando o projeto"
+        - echo "Terminou :D"
