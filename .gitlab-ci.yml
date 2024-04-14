@@ -5,14 +5,11 @@ stages:
   - test
   - deploy
 
-variables:
-  CI_PROJECT_DIR: "$CI_PROJECT_DIR"
-
 build:
   stage: build
   script:
     - echo "Iniciando o estágio de build"
-    - cd $CI_PROJECT_DIR
+    - cd somativa1devops
     - npm install
     - npm run build
 
@@ -20,12 +17,11 @@ test:
   stage: test
   script:
     - echo "Iniciando o estágio de testes"
-    - cd $CI_PROJECT_DIR
+    - cd somativa1devops
     - npm test
 
 deploy:
   stage: deploy
   script:
     - echo "Iniciando o estágio de deploy"
-    - cd $CI_PROJECT_DIR
-
+    - cd somativa1devops
